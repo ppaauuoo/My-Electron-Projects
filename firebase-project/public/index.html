@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pal's TODO list</title>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
+
+        <script>
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDjrXyTxQr2zsj4ESRbdCQ3jZhQn3isils",
+          authDomain: "users-database-43c32.firebaseapp.com",
+          projectId: "users-database-43c32",
+          storageBucket: "users-database-43c32.appspot.com",
+          messagingSenderId: "475380223424",
+          appId: "1:475380223424:web:864db539871a04a0148c25",
+          measurementId: "G-ED5SBDPQBY"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+    
+    
+    <script src="app.js" defer></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"
+    integrity="sha512-/seDHxVfh1NvFUscAj8GsHQVZJvr2jjAoYsNL7As2FCaFHUHYIarl3sRCvVlFgyouVNiRgHIebyLKjpgd1SLDw=="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Pal's TODO list</h1>
+    <section id="whenSignedOut">
+
+        <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
+    
+      </section>
+    
+      <section id="whenSignedIn" hidden="true">
+    
+        <div id="userDetails"></div>
+    
+        <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
+    
+      </section>
+
+      <section>
+        <h2>My Firestore Things</h2>
+
+        <ul id="thingsList">
+
+        </ul>
+        <input id="things" maxlength="20"></input><br>
+        <button id="addThing" class="btn btn-success">Add a Thing</button>
+        <button id="createThing" class="btn btn-success">Create Random Thing</button>
+      </section>
+    
+</body>
+</html>
