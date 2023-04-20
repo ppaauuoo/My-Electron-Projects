@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDTTM Database</title>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <script>
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDjrXyTxQr2zsj4ESRbdCQ3jZhQn3isils",
+          authDomain: "users-database-43c32.firebaseapp.com",
+          projectId: "users-database-43c32",
+          storageBucket: "users-database-43c32.appspot.com",
+          messagingSenderId: "475380223424",
+          appId: "1:475380223424:web:864db539871a04a0148c25",
+          measurementId: "G-ED5SBDPQBY"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+    
+    
+    <script src="app.js" defer></script>
+
+</head>
+<body>
+    <h1>NDTTM</h1>
+      <section id="whenSignedOut">
+
+        <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
+    
+      </section>
+    
+      <section id="whenSignedIn" hidden="true">
+        <div id="userDetails"></div>
+        <button id="inputDataBt" class="btn btn-primary">Input</button>
+        <button id="dataTableBt" class="btn btn-primary">Table</button>
+        <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
+    
+      </section>
+
+      <section id="inputData" hidden="true">
+        <div>
+          Name:
+          <input id="name" type="text"></input>
+          Surname:
+          <input id="surname" type="text"></input>
+          Age:
+          <input id="age" type="text"></input>
+          Height:
+          <input id="height" type="text"></input>
+          Weight:
+          <input id="weight" type="text"></input>
+          <button id="saveBt">Save</button>
+        </div>
+      </section>
+
+      <section id="dataTable" hidden="true">
+        <div>
+          <ul id="userlist"></ul>
+          
+        </div>
+      </section>
+
+      <button id="homeBt" hidden="true">Home</button>
+
+    
+</body>
+</html>

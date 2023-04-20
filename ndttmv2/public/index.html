@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="nttm_icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NITTM Database</title>
+      <style>
+        body {
+          background-color: whitesmoke;
+          font-family: Arial, sans-serif;
+          color: #54166C;
+        }
+
+        h1 {
+          text-align: center;
+          margin-top: 2rem;
+          color:#441900;
+          font-family: 'EB Garamond', serif;
+          
+          
+          
+        }
+        h4 {
+          text-align: center;
+          margin-top: 2rem;
+          color:#441900;
+          font-family: 'EB Garamond', serif;
+          font-size: 20px;
+          background: #D7DEBA;
+          
+        }
+
+        .box {
+        background-color: #D7DEBA;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px; /* set the height as required */
+        }
+
+        section {
+          margin: 2rem auto;
+          width: 80%;
+          text-align: center;
+        }
+
+        input[type=text] {
+          border: none;
+          border-bottom: 2px solid #54166C;
+          padding: 0.5rem;
+          margin: 0 0.5rem;
+          width: 10rem;
+        }
+
+        button {
+          background-color: #54166C;
+          color: #D7DEBA;
+          border: none;
+          border-radius: 0.5rem;
+          padding: 0.5rem 1rem;
+          margin: 1rem;
+          cursor: pointer;
+          font-size: 1.2rem;
+          transition: all 0.2s ease-in-out;
+        }
+
+        button:hover {
+          background-color: #D7DEBA;
+          color: #54166C;
+          transform: scale(1.1);
+        }
+
+        ul {
+          margin: 1rem 0;
+          padding: 1rem;
+          border: 2px solid #54166C;
+          border-radius: 0.5rem;
+          background-color: #D7DEBA;
+          text-align: center;
+          overflow: auto;
+
+        }
+
+        #inputData{
+          text-align: left;
+        }
+
+        img{
+        display: block;
+        margin: auto;
+        padding: 1rem;
+        }
+
+      </style>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+        <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDjrXyTxQr2zsj4ESRbdCQ3jZhQn3isils",
+          authDomain: "users-database-43c32.firebaseapp.com",
+          projectId: "users-database-43c32",
+          storageBucket: "users-database-43c32.appspot.com",
+          messagingSenderId: "475380223424",
+          appId: "1:475380223424:web:864db539871a04a0148c25",
+          measurementId: "G-ED5SBDPQBY"
+        };
+        firebase.initializeApp(firebaseConfig);
+        </script>
+      <script src="app.js" defer></script>
+</head>
+  <div>
+    <img src="nttm_icon.png" style="image-rendering: crisp-edges; width: 120px;"">
+  </div>
+  <h1>NITTM</h1>
+  <div class="box">
+    <h4>Netdao Institute of Thai Traditional Medicine</h4>
+  </div>
+  
+      <section id="whenSignedOut">
+
+        <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
+    
+      </section>
+    
+      <section id="whenSignedIn" hidden="true">
+        <div id="userDetails"></div>
+        <button id="inputDataBt" class="btn btn-primary">Input</button>
+        <button id="dataTableBt" class="btn btn-primary">Table</button>
+        
+    
+      </section>
+      <button id="homeBt">Home</button>
+
+      <section id="inputData" hidden="true">
+          <pre>
+          Name:
+
+            <input id="name" type="text"></input><br>
+          Surname: 
+
+            <input id="surname" type="text"></input><br>
+          Age:  
+
+            <input id="age" type="text"></input><br><br><br>
+          Height: 
+
+            <input id="height" type="text"></input><br>
+          Weight: 
+          
+            <input id="weight" type="text"></input><br><br><br>
+          </pre>
+          <button id="saveBt">Save</button>
+        </div>
+      </section>
+
+      <section id="dataTable" hidden="true">
+        <div>
+          <ul id="userlist">
+            
+          </ul>
+          
+        </div>
+      </section>
+
+      
+      <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
+    
+</body>
+</html>
