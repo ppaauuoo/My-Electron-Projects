@@ -1,4 +1,2 @@
 # My-JavaScript-Projects
-all the electron, javascrip , firebase and etc., project i learn
-
-FROM FIRE SHIP SENSEI
+everything i learned about javascript frontend backend and overall save in one place.
